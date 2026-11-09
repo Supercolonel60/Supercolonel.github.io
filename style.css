@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700&display=swap');
+
+:root {
+    --background: #050505;
+    --surface: #101410;
+    --green: #00FA04;
+    --cyan: #1ff0ff;
+    --text: #f0f0f0;
+    --muted: #a0aaa0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 15% 20%, #00fa0412, transparent 45%),
+        radial-gradient(ellipse at 85% 70%, #1ff0ff10, transparent 45%);
+}
+
+a {
+    color: var(--cyan);
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+a:hover {
+    color: var(--green);
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #050505eF;
+    border-bottom: 1px solid #00fa0430;
+    backdrop-filter: blur(12px);
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: 0 0 15px #00fa0470;
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--green);
+    text-shadow: 0 0 25px #00fa0450;
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 1.15rem;
+    max-width: 650px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--green);
+    border-radius: 5px;
+    color: var(--green);
+    font-weight: 600;
+}
+
+.button.primary {
+    background: var(--green);
+    color: #050505;
+    box-shadow: 0 0 20px #00fa0430;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 22px #00fa0450;
+}
+
+section {
+    padding: 85px 0;
+    border-top: 1px solid #ffffff0d;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 35px;
+}
+
+.section-title span {
+    color: var(--green);
+}
+
+.about-text {
+    max-width: 800px;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.skills-grid,
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(145deg, #111711, #090c09);
+    border: 1px solid #00fa0425;
+    border-radius: 10px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--green);
+    box-shadow: 0 8px 30px #00fa0415;
+}
+
+.card h3 {
+    color: var(--cyan);
+    margin-bottom: 12px;
+}
+
+.card p,
+.card li {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.project-tag {
+    display: inline-block;
+    color: var(--green);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+footer {
+    padding: 30px 0;
+    border-top: 1px solid #00fa0425;
+    text-align: center;
+    color: #707a70;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 650px) {
+    nav {
+        flex-direction: column;
+        padding: 18px 0;
+    }
+
+    nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 65vh;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
